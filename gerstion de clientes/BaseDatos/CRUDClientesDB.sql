@@ -1,0 +1,19 @@
+CREATE DATABASE CRUDClientesDB;
+GO
+
+USE CRUDClientesDB;
+GO
+
+CREATE TABLE Clientes
+(
+    IdCliente INT IDENTITY(1,1) PRIMARY KEY,
+    Nombre NVARCHAR(100) NOT NULL,
+    Apellido NVARCHAR(100) NOT NULL,
+    Telefono NVARCHAR(20),
+    Correo NVARCHAR(150),
+    Direccion NVARCHAR(200),
+    FechaRegistro DATETIME2 NOT NULL DEFAULT GETDATE(),
+    Activo BIT NOT NULL DEFAULT 1,
+    RowVersion ROWVERSION
+);
+GO
